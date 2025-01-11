@@ -1,0 +1,187 @@
+geographical_divisions:
+  1355:
+    division: https://amar.org.ir/Portals/0/GEO/GEO55Xls.xls
+
+  1365:
+    division: https://amar.org.ir/Portals/0/GEO/GEO65Xls.zip
+
+  1367:
+    division: https://amar.org.ir/Portals/0/GEO/GEO67Xls.zip
+
+  1370:
+    division: https://amar.org.ir/Portals/0/GEO/GEO70Xls.zip
+
+  1372:
+    division: https://amar.org.ir/Portals/0/GEO/GEO72Xls.zip
+
+  1373:
+    division: https://amar.org.ir/Portals/0/GEO/GEO73Xls.zip
+
+  1375:
+    division: https://amar.org.ir/Portals/0/GEO/GEO75Xls.xlsx
+
+  1376:
+    division: https://amar.org.ir/Portals/0/GEO/GEO76Xls.zip
+
+  1381:
+    division: https://amar.org.ir/Portals/0/GEO/GEO81Xls.zip
+
+  1382:
+    division: https://amar.org.ir/Portals/0/GEO/GEO82Xls.zip
+
+  1385:
+    division: https://amar.org.ir/Portals/0/GEO/GEO85Xls.zip
+
+  1388:
+    division: https://amar.org.ir/Portals/0/GEO/re-18GEO_88Xl.zip
+
+  1389:
+    division: https://amar.org.ir/Portals/0/GEO/GEO89Xlsx.zip
+
+  1390:
+    division: https://amar.org.ir/Portals/0/GEO/GEO90Xlsx.xlsx
+
+  1391:
+    division: https://amar.org.ir/Portals/0/GEO/GEO91Xlsx.xlsx
+
+  1392:
+    division: https://amar.org.ir/Portals/0/GEO/GEO92Xlsx.xlsx
+
+  1393:
+    division: https://amar.org.ir/Portals/0/GEO/GEO93Xlsx-revised.xlsx
+    summary: https://amar.org.ir/Portals/0/GEO/GEO93-summary.pdf
+
+  1394:
+    division: https://amar.org.ir/Portals/0/GEO/GEO94Xlsx.xlsx
+    summary: https://amar.org.ir/Portals/0/GEO/GEO94-summary.pdf
+
+  1395:
+    division: https://amar.org.ir/Portals/0/GEO/GEO95Xlsx.xlsx
+
+  1396:
+    division: https://amar.org.ir/Portals/0/GEO/GEO96Xlsx.xlsx
+
+  1397:
+    division: https://amar.org.ir/Portals/0/GEO/GEO97.xlsx
+    summary: https://amar.org.ir/Portals/0/GEO/GEO97-summary.pdf
+
+  1398:
+    division: https://amar.org.ir/Portals/0/GEO/GEO98.xlsx
+    summary: https://amar.org.ir/Portals/0/GEO/GEO98-summary.pdf
+
+  1399:
+    division: https://amar.org.ir/Portals/0/GEO/GEO99.xlsx
+    summary: https://amar.org.ir/Portals/0/GEO/GEO99_SUMMERI.pdf
+    changes: https://amar.org.ir/Portals/0/GEO/GEO-changes99.xls
+
+  1400:
+    division: https://amar.org.ir/Portals/0/GEO/2024/GEO1400.xlsx
+    summary: https://amar.org.ir/Portals/0/GEO/2024/GEO1400-SUMMERI.pdf
+    changes: https://amar.org.ir/Portals/0/GEO/2024/GEOCHENGES1400.xls
+
+  1401:
+    division: https://amar.org.ir/Portals/0/GEO/DOC/Fehrest_Taghsimat_Keshvari_1401.xlsx
+
+  1402:
+    division: https://amar.org.ir/Portals/0/Statistics/je_fehrest_taghsimat_keshvari_1402-14030430113507.xlsx
+    changes: https://amar.org.ir/Portals/0/Statistics/0808143/فهرست تغییرات فایل جغرافیایی ۱۴۰۲.xls
+
+
+census_results:
+  1385:
+    '00': https://amar.org.ir/Portals/0/Statistics/00-14030605122531.xls
+    '01': https://amar.org.ir/Portals/0/Statistics/01-14030605121820.xls
+    '02': https://amar.org.ir/Portals/0/Statistics/02-14030605122317.xls
+    '03': https://amar.org.ir/Portals/0/Statistics/03-14030605084024.xls
+    '04': https://amar.org.ir/Portals/0/Statistics/04-14030605084422.xls
+    '05': https://amar.org.ir/Portals/0/Statistics/05-14030605121013.xls
+    '06': https://amar.org.ir/Portals/0/Statistics/06(1)-14030605104853.xls
+    '07': https://amar.org.ir/Portals/0/Statistics/07(1)-14030605114748.xls
+    '08': https://amar.org.ir/Portals/0/Statistics/08-14030605120723.xls
+    '09': https://amar.org.ir/Portals/0/Statistics/09-14030605104139.xls
+    '10': https://amar.org.ir/Portals/0/Statistics/10-14030605085759.xls
+    '11': https://amar.org.ir/Portals/0/Statistics/11(1)-14030605114335.xls
+    '12': https://amar.org.ir/Portals/0/Statistics/12-14030605120356.xls
+    '13': https://amar.org.ir/Portals/0/Statistics/13-14030605124646.xls
+    '14': https://amar.org.ir/Portals/0/Statistics/14-14030605102844.xls
+    '15': https://amar.org.ir/Portals/0/Statistics/15-14030605122048.xls
+    '16': https://amar.org.ir/Portals/0/Statistics/16(1)-14030605090219.xls
+    '17': https://amar.org.ir/Portals/0/Statistics/17-14030605121240.xls
+    '18': https://amar.org.ir/Portals/0/Statistics/18(1)-14030605090815.xls
+    '19': https://amar.org.ir/Portals/0/Statistics/19(1)-14030605110301.xls
+    '20': https://amar.org.ir/Portals/0/Statistics/20-14030605111628.xls
+    '21': https://amar.org.ir/Portals/0/Statistics/21(1)-14030605125233.xls
+    '22': https://amar.org.ir/Portals/0/Statistics/22(2)-14030605124349.xls
+    '23': https://amar.org.ir/Portals/0/Statistics/23-14030605091155.xls
+    '24': https://amar.org.ir/Portals/0/Statistics/24-14030605084708.xls
+    '25': https://amar.org.ir/Portals/0/Statistics/25(1)-14030605120120.xls
+    '26': https://amar.org.ir/Portals/0/Statistics/26(1)-14030605115752.xls
+    '27': https://amar.org.ir/Portals/0/Statistics/27(1)-14030605121510.xls
+    '28': https://amar.org.ir/Portals/0/Statistics/28(1)-14030605104535.xls
+    '29': https://amar.org.ir/Portals/0/Statistics/29(1)-14030605103209.xls
+
+  1390:
+    '00': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os00.xls
+    '01': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os01.xls
+    '02': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os02-r.xls
+    '03': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os03.xls
+    '04': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os04-r.xls
+    '05': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os05.xls
+    '06': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os06.xls
+    '07': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os07-r.xls
+    '08': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os08.xls
+    '09': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os09.xls
+    '10': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os10.xls
+    '11': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os11.xls
+    '12': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os12.xls
+    '13': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os13.xls
+    '14': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os14.xls
+    '15': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os15.xls
+    '16': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os16.xls
+    '17': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os17.xls
+    '18': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os18.xls
+    '19': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os19.xls
+    '20': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os20.xls
+    '21': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os21.xls
+    '22': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os22.xls
+    '23': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os23.xls
+    '24': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os24.xls
+    '25': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os25.xls
+    '26': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os26.xls
+    '27': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os27.xls
+    '28': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os28.xls
+    '29': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os29.xls
+    '30': https://old.sci.org.ir/Portals/0/sarshomari90/Files/ABADY-90/os30.xls
+
+  1395:
+    '00': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_00_r-14030410120536.xlsx
+    '01': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_01_r-14030410121017.xlsx
+    '02': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_02_r-14030410121308.xlsx
+    '03': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_03_r-14030410121504.xlsx
+    '04': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_04_r-14030410121744.xlsx
+    '05': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_05_r-14030410121938.xlsx
+    '06': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_06_r-14030410122146.xlsx
+    '07': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_07_r-14030410122336.xlsx
+    '08': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_08_r-14030410122544.xlsx
+    '09': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_09_r-14030410122735.xlsx
+    '10': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_10_r-14030410122915.xlsx
+    '11': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_11_r-14030410123110.xlsx
+    '12': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_12_r-14030410150308.xlsx
+    '13': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_13_r-14030410150459.xlsx
+    '14': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_14_r-14030410150718.xlsx
+    '15': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_15_r-14030410150925.xlsx
+    '16': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_16_r-14030410151135.xlsx
+    '17': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_17_r-14030410151326.xlsx
+    '18': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_18_r-14030410151548.xlsx
+    '19': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_19_r-14030410151825.xlsx
+    '20': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_20_r-14030410152010.xlsx
+    '21': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_21_r-14030410152220.xlsx
+    '22': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_22_r-14030410152933.xlsx
+    '23': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_23_r-14030410153438.xlsx
+    '24': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_24_r-14030410153633.xlsx
+    '25': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_25_r-14030410153835.xlsx
+    '26': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_26_r-14030410154020.xlsx
+    '27': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_27_r-14030410154226.xlsx
+    '28': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_28_r-14030410154436.xlsx
+    '29': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_29_r-14030410154730.xlsx
+    '30': https://amar.org.ir/Portals/0/Statistics/CN95_HouseholdPopulationVillage_30_r-14030410155042.xlsx

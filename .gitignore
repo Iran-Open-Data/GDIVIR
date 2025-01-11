@@ -1,0 +1,6 @@
+.venv/*
+data/*
+
+*.pyc
+
+draft.ipynb

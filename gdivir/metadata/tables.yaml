@@ -1,0 +1,277 @@
+geographical_divisions:
+  1355:
+    columns: &columns_1355
+      - ID
+      - Province_Name
+      - County_Name
+      - District_Name
+      - City_Name
+      - Rural_District_Name
+      - Village_Name
+    id:
+      Province_ID: [0, 2]
+      County_ID: [2, 4]
+      District_ID: [4, 4]
+      Rural_District_or_City_ID: [4, 7]
+      Village_ID: [7, 10]
+
+  1365:
+    columns: *columns_1355
+    id:
+      Province_ID: [0, 2]
+      County_ID: [2, 4]
+      District_ID: [4, 6]
+      Rural_District_or_City_ID: [6, 9]
+      Village_ID: [9, 18]
+
+  1367:
+    columns: *columns_1355
+    id:
+      Province_ID: [0, 2]
+      County_ID: [2, 4]
+      District_ID: [4, 6]
+      Rural_District_or_City_ID: [6, 10]
+      Village_ID: [10, 19]
+
+  1388:
+    reverse: true
+    columns:
+      - _DROP_1
+      - Village_Name
+      - Rural_District_Name
+      - City_Name
+      - District_Name
+      - County_Name
+      - Province_Name
+      - ID
+    id: &id_1388
+      Province_ID: [0, 2]
+      County_ID: [2, 4]
+      District_ID: [4, 6]
+      Rural_District_or_City_ID: [6, 10]
+      Village_ID: [10, 16]
+
+  1389:
+    skiprows: 3
+    columns: *columns_1355
+    id: *id_1388
+
+  1393:
+    columns:
+      - ID
+      - Province_Name
+      - County_Name
+      - District_Name
+      - Rural_District_Name
+      - City_Name
+      - Village_Name
+      - Region_Type
+      - DIAG
+      - _DROP_1
+    id: *id_1388
+
+  1394:
+    skiprows: 2
+    columns:
+      - _DROP_1
+      - ID
+      - Province_Name
+      - County_Name
+      - District_Name
+      - Rural_District_Name
+      - City_Name
+      - Village_Name
+    id: *id_1388
+
+  1395:
+    columns:
+      - ID
+      - Province_ID
+      - Province_Name
+      - County_ID
+      - County_Name
+      - District_ID
+      - District_Name
+      - Rural_District_ID
+      - Rural_District_Name
+      - City_ID
+      - City_Name
+      - Village_ID
+      - Village_Name
+      - Region_Type
+      - DIAG
+
+  1396:
+    columns:
+      - Province_ID
+      - Province_Name
+      - County_ID
+      - County_Name
+      - District_ID
+      - District_Name
+      - Rural_District_ID
+      - Rural_District_Name
+      - City_ID
+      - City_Name
+      - Village_ID
+      - Village_Name
+      - Region_Type
+      - DIAG
+
+  1397:
+    skiprows: 5
+    columns:
+      - Province_ID
+      - Province_Name
+      - County_ID
+      - County_Name
+      - District_ID
+      - District_Name
+      - Rural_District_or_City_ID
+      - Rural_District_Name
+      - City_Name
+      - Village_ID
+      - Region_Type
+      - Village_Name
+      - DIAG
+      - _DROP_1
+      - _DROP_2
+
+  1398:
+    columns:
+      - ID
+      - Province_ID
+      - Province_Name
+      - County_ID
+      - County_Name
+      - District_ID
+      - District_Name
+      - Rural_District_or_City_ID
+      - Rural_District_Name
+      - City_Name
+      - Village_ID
+      - Region_Type
+      - Village_Name
+      - DIAG
+      - Municipal_Area
+
+  1399:
+    skiprows: 2
+    columns:
+      - Province_ID
+      - Province_Name
+      - County_ID
+      - County_Name
+      - District_ID
+      - District_Name
+      - Rural_District_or_City_ID
+      - Rural_District_Name
+      - Village_ID
+      - Region_Type
+      - Region_Name
+      - DIAG
+
+  1400:
+    columns:
+      - Province_ID
+      - Province_Name
+      - County_ID
+      - County_Name
+      - District_ID
+      - District_Name
+      - Rural_District_or_City_ID
+      - Rural_District_or_City_Name
+      - Village_ID
+      - Region_Type
+      - Region_Name
+      - DIAG
+
+  1401:
+    columns:
+      - Province_Name
+      - Province_ID
+      - County_Name
+      - County_ID
+      - District_Name
+      - District_ID
+      - Rural_District_Name
+      - Rural_District_or_City_ID
+      - City_Name
+      - Region_Type
+      - Region_Name
+      - DIAG
+
+  1402:
+    columns:
+      - Province_ID
+      - Province_Name
+      - County_ID
+      - County_Name
+      - District_ID
+      - District_Name
+      - Rural_District_or_City_ID
+      - Rural_District_or_City_Name
+      - Region_Type
+      - Region_Name
+      - FARICODE
+      - DIAG
+
+
+census_results:
+  1385:
+    usecols: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    skiprows: 5
+    columns:
+      - ID
+      - Province_Name
+      - County_Name
+      - District_Name
+      - City_Name
+      - Rural_District_Name
+      - Village_Name
+      - Household_Count
+      - Population
+    id:
+      Province_ID: [0, 2]
+      County_ID: [2, 4]
+      District_ID: [4, 6]
+      Rural_District_or_City_ID: [6, 10]
+      Village_ID: [10, 19]
+
+  1390:
+    usecols: [0, 1, 4, 5, 6, 7, 8, 9, 10]
+    skiprows: 2
+    columns:
+      - ID
+      - Population
+      - Household_Count
+      - Province_Name
+      - County_Name
+      - District_Name
+      - City_Name
+      - Rural_District_Name
+      - Village_Name
+    id:
+      Province_ID: [0, 2]
+      County_ID: [2, 4]
+      District_ID: [4, 6]
+      Rural_District_or_City_ID: [6, 10]
+      Village_ID: [10, 19]
+
+  1395:
+    skiprows: 2
+    usecols: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11,14, 15]
+    columns:
+      - Province_ID
+      - Province_Name
+      - County_ID
+      - County_Name
+      - District_ID
+      - District_Name
+      - Rural_District_or_City_ID
+      - Rural_District_or_City_Name
+      - Village_ID
+      - Village_Name
+      - Region_Type
+      - Household_Count
+      - Population

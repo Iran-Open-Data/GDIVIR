@@ -1,0 +1,16 @@
+hbsir:
+  counties:
+    non_standard_codes:
+      1384: &hbsir_nsc_1384
+        '2813': '0913'
+        '2911': '0911'
+        '2912': '0912'
+      1385: *hbsir_nsc_1384
+      1386: *hbsir_nsc_1384
+      1392: &hbsir_nsc_1392
+        '2911': '2110'
+      1393: *hbsir_nsc_1392
+      1394: *hbsir_nsc_1392
+      1395: &hbsir_nsc_1395
+        '2909': '2110'
+      1396: *hbsir_nsc_1395
