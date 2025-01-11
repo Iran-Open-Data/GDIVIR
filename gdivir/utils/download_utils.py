@@ -1,3 +1,14 @@
+"""
+This module provides utilities for downloading files from the internet.
+
+It includes functions to download files from given URLs and save them to specified local paths.
+
+Functions
+---------
+download(url: str, path: Path) -> None
+    Downloads a file from a given URL and saves it to a specified local path.
+"""
+
 from pathlib import Path
 
 import requests
@@ -7,24 +18,14 @@ def download(url: str, path: Path) -> None:
     """Downloads a file from a given URL and saves it to a specified local path.
 
     This function uses the requests library to send a GET request to the provided URL,
-    and then writes the response content to a file at the specified path. If the path
-    is not provided, the file is saved in a temporary directory. The function also
-    provides an option to display a progress bar during the download.
+    and then writes the response content to a file at the specified path.
 
     Parameters
     ----------
     url : str
         The URL of the file to download.
-    path : str, Path, optional
-        The local path where the downloaded file should be saved. If None, the file
-        is saved in a temporary directory. Default is None.
-    show_progress_bar : bool, optional
-        If True, a progress bar is displayed during the download. Default is False.
-
-    Returns
-    -------
-    Path
-        The local path where the downloaded file was saved.
+    path : Path
+        The local path where the downloaded file should be saved.
 
     Raises
     ------
