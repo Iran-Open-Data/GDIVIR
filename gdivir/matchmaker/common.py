@@ -213,7 +213,7 @@ def create_population_transformation_table(year: int, region_type: _RegionType) 
     )
 
 
-def create_one_to_one_mapping_documentation(year: int, region_type: _RegionType) -> pd.DataFrame:
+def create_many_to_one_mapping_documentation(year: int, region_type: _RegionType) -> pd.DataFrame:
     return (
         create_population_transformation_table(year, region_type)
         .sort_values([f"New_{region_type}_ID", "Population_Share"], ascending=[True, False])
@@ -224,9 +224,9 @@ def create_one_to_one_mapping_documentation(year: int, region_type: _RegionType)
     )
 
 
-def create_one_to_one_mapping(year: int, region_type: _RegionType) -> dict:
+def create_many_to_one_mapping(year: int, region_type: _RegionType) -> dict:
     return(
-        create_one_to_one_mapping_documentation(year, region_type)
+        create_many_to_one_mapping_documentation(year, region_type)
         .loc[lambda df: df["Selected"]]
         .set_index(f"New_{region_type}_ID")
         .loc[:, f"Old_{region_type}_ID"]

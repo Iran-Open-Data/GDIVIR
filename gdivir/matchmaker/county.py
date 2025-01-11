@@ -95,7 +95,7 @@ def _get_extra_provincial_transformations(provincial_standards: dict) -> dict:
     transformations = {1365: {}}
     for year in standard_years:
         transformations[year] = (
-            common.create_one_to_one_mapping_documentation(year, "County")
+            common.create_many_to_one_mapping_documentation(year, "County")
             .loc[lambda df: df["Selected"]]
             .loc[lambda df: df["New_County_ID"].str[:2] != df["Old_County_ID"].str[:2]]
             .set_index("New_County_ID")
