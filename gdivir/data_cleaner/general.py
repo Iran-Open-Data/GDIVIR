@@ -1,3 +1,29 @@
+"""
+This module provides general data cleaning functions for a DataFrame.
+
+It includes functions to clean Farsi text, ID columns, and numeric columns.
+
+Functions
+---------
+apply_general_cleaning(table: pd.DataFrame) -> None
+    Apply general cleaning to the DataFrame by cleaning Farsi text, IDs, and numeric columns.
+_clean_farsi_text(s: pd.Series) -> pd.Series
+    Clean Farsi text by replacing Arabic characters, removing invisible and unwanted characters,
+    normalizing spaces, and stripping leading/trailing spaces.
+_replace_arabic_characters(s: pd.Series) -> pd.Series
+    Replace Arabic characters with their Farsi equivalents in the Series.
+_get_farsi_columns(df: pd.DataFrame) -> list
+    Get the list of columns that contain Farsi text based on column names.
+_clean_ids(s: pd.Series) -> pd.Series
+    Clean ID columns by removing all non-digit characters.
+_get_id_columns(df: pd.DataFrame) -> list
+    Get the list of columns that contain ID values based on column names.
+_clean_numeric_columns(s: pd.Series) -> pd.Series
+    Clean numeric columns by extracting numeric values and converting them to integers.
+_get_numeric_columns(df: pd.DataFrame) -> list
+    Get the list of columns that contain numeric values based on column names.
+"""
+
 import pandas as pd
 
 
@@ -33,6 +59,14 @@ UNWANTED_SYMBOLS = [
 
 
 def apply_general_cleaning(table: pd.DataFrame) -> None:
+    """
+    Apply general cleaning to the DataFrame by cleaning Farsi text, IDs, and numeric columns.
+
+    Parameters
+    ----------
+    table : pd.DataFrame
+        The DataFrame to be cleaned.
+    """
     farsi_columns = _get_farsi_columns(table)
     table.loc[:, farsi_columns] = table.loc[:, farsi_columns].apply(_clean_farsi_text)
     id_columns = _get_id_columns(table)
@@ -45,6 +79,20 @@ def apply_general_cleaning(table: pd.DataFrame) -> None:
 
 
 def _clean_farsi_text(s: pd.Series) -> pd.Series:
+    """
+    Clean Farsi text by replacing Arabic characters, removing invisible and unwanted characters,
+    normalizing spaces, and stripping leading/trailing spaces.
+
+    Parameters
+    ----------
+    s : pd.Series
+        The Series containing Farsi text to be cleaned.
+
+    Returns
+    -------
+    pd.Series
+        The cleaned Farsi text.
+    """
     s = _replace_arabic_characters(s)
 
     # Replace Zero Width Non-Joiner ('\u200c') with a space
@@ -64,6 +112,19 @@ def _clean_farsi_text(s: pd.Series) -> pd.Series:
 
 
 def _replace_arabic_characters(s: pd.Series) -> pd.Series:
+    """
+    Replace Arabic characters with their Farsi equivalents in the Series.
+
+    Parameters
+    ----------
+    s : pd.Series
+        The Series containing text with Arabic characters.
+
+    Returns
+    -------
+    pd.Series
+        The Series with Arabic characters replaced by Farsi equivalents.
+    """
     for old_char, new_char in [
         (chr(1610), chr(1740)), # ي -> ی
         (chr(1574), chr(1740)), # ئ -> ی
@@ -80,14 +141,53 @@ def _replace_arabic_characters(s: pd.Series) -> pd.Series:
 
 
 def _get_farsi_columns(df: pd.DataFrame) -> list:
+    """
+    Get the list of columns that contain Farsi text based on column names.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        The DataFrame to check for Farsi columns.
+
+    Returns
+    -------
+    list
+        The list of column names that contain Farsi text.
+    """
     return [column for column in df.columns if "Name" in column]
 
 
 def _clean_ids(s: pd.Series) -> pd.Series:
+    """
+    Clean ID columns by removing all non-digit characters.
+
+    Parameters
+    ----------
+    s : pd.Series
+        The Series containing ID values to be cleaned.
+
+    Returns
+    -------
+    pd.Series
+        The cleaned ID values.
+    """
     return s.str.replace("\\D", "", regex=True)
 
 
 def _get_id_columns(df: pd.DataFrame) -> list:
+    """
+    Get the list of columns that contain ID values based on column names.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        The DataFrame to check for ID columns.
+
+    Returns
+    -------
+    list
+        The list of column names that contain ID values.
+    """
     return [
         column for column in df.columns
         if ("ID" in column) or (column in ["Region_Type", "DIAG"])
@@ -95,6 +195,19 @@ def _get_id_columns(df: pd.DataFrame) -> list:
 
 
 def _clean_numeric_columns(s: pd.Series) -> pd.Series:
+    """
+    Clean numeric columns by extracting numeric values and converting them to integers.
+
+    Parameters
+    ----------
+    s : pd.Series
+        The Series containing numeric values to be cleaned.
+
+    Returns
+    -------
+    pd.Series
+        The cleaned numeric values as integers.
+    """
     return (
         s
         .astype(str)
@@ -105,6 +218,19 @@ def _clean_numeric_columns(s: pd.Series) -> pd.Series:
 
 
 def _get_numeric_columns(df: pd.DataFrame) -> list:
+    """
+    Get the list of columns that contain numeric values based on column names.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        The DataFrame to check for numeric columns.
+
+    Returns
+    -------
+    list
+        The list of column names that contain numeric values.
+    """
     return [
         column for column in df.columns
         if column in ["Household_Count", "Population"]
