@@ -8,8 +8,10 @@ from zipfile import ZipFile
 import pandas as pd
 
 from . import data_cleaner
-from .utils import download, metadata, _Dataset
+from .utils import download, metadata, _Dataset, directories
 
+
+_Years = int | list[int] | Literal["all"]
 
 warnings.filterwarnings(
     "ignore",
@@ -25,29 +27,29 @@ def setup_data(dataset: _Dataset = "geographical_divisions") -> None:
 
 
 def download_original_files(
-    years: int | list[int] | Literal["all"],
+    years: _Years,
     dataset: _Dataset = "geographical_divisions",
 ) -> None:
     years = _parse_years(years, dataset)
     data_set_metadata = metadata.raw_files[dataset]
     for year in years:
-        original_file_directory = Path("data", "original", dataset, str(year))
+        original_file_directory = directories.original_data / dataset / str(year)
         for directory_name, url in data_set_metadata[year].items():
-            directory = original_file_directory.joinpath(directory_name)
+            directory = original_file_directory / directory_name
             download(url, directory)
     
 
 def extract_raw_files(
-    years: int | list[int] | Literal["all"],
+    years: _Years,
     dataset: _Dataset = "geographical_divisions",
 ) -> None:
     years = _parse_years(years, dataset)
-    raw_directory = Path("data", "raw", dataset)
+    raw_directory = directories.raw_data / dataset
     raw_directory.mkdir(parents=True, exist_ok=True)
     for year in years:
         table = _extract_data_from_excel(year, dataset)
         data_cleaner.apply_general_cleaning(table)
-        table.to_csv(raw_directory.joinpath(f"{year}.csv"), index=False)
+        table.to_csv(raw_directory / f"{year}.csv", index=False)
 
 
 def create_clean_dataset(dataset: _Dataset = "geographical_divisions") -> None:
@@ -63,32 +65,29 @@ def create_clean_dataset(dataset: _Dataset = "geographical_divisions") -> None:
         table_list.append(create_clean_table(year))
     table = pd.concat(table_list, ignore_index=True)
 
-    clean_data_path = Path("data", "cleaned", f"{dataset}.parquet")
+    clean_data_path = directories.cleaned_data / f"{dataset}.parquet"
     clean_data_path.parent.mkdir(parents=True, exist_ok=True)
     shutil.rmtree(clean_data_path, ignore_errors=True)
     table.to_parquet(clean_data_path, partition_cols=["Year"])
 
 
-def _parse_years(
-    years: int | list[int] | Literal["all"],
-    data_set: str,
-) -> list[int]:
+def _parse_years(years: _Years, dataset: str) -> list[int]:
     if isinstance(years, int):
         years = [years]
     elif years == "all":
-        years = list(metadata.raw_files[data_set].keys())
+        years = list(metadata.raw_files[dataset].keys())
     return years
 
 
 def _extract_data_from_excel(year: int, dataset: _Dataset) -> pd.DataFrame:
-    data_set_directory = Path("data", "original", dataset)
+    data_set_directory = directories.original_data / dataset
     if dataset == "geographical_divisions":
-        directories = [data_set_directory.joinpath(str(year), "division")]
+        directorie_list = [data_set_directory / str(year) / "division"]
     elif dataset == "census_results":
-        directories = data_set_directory.joinpath(str(year)).iterdir()
+        directorie_list = list(data_set_directory.joinpath(str(year)).iterdir())
     else:
         raise ValueError
-    excel_files = [_read_excel_file(path) for path in directories]
+    excel_files = [_read_excel_file(path) for path in directorie_list]
     table_metadata = metadata[dataset].get_metadata_version("tables", year)
     
     tables: list[pd.DataFrame] = []
@@ -144,4 +143,14 @@ def _open_excel_sheet(
         columns.reverse()
     table = table[columns]
     assert isinstance(table, pd.DataFrame)
+    return table
+
+
+def load_dataset(
+    dataset: _Dataset = "geographical_divisions",
+    years: _Years = "all",
+) -> pd.DataFrame:
+    dataset_path = directories.cleaned_data / f"{dataset}.parquet"
+    parsed_years = _parse_years(years=years, dataset=dataset)
+    table = pd.read_parquet(dataset_path, filters=[("Year", "in", parsed_years)])
     return table

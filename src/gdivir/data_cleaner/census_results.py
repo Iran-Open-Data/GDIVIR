@@ -23,7 +23,7 @@ CLEAN_TABLE_COLUMNS = [
 
 
 def create_clean_table(year: int) -> pd.DataFrame:
-    path = directories.raw_data.joinpath("census_results", f"{year}.csv")
+    path = directories.raw_data / "census_results" / f"{year}.csv"
     table = pd.read_csv(path, dtype=str)
 
     table = table.fillna("")

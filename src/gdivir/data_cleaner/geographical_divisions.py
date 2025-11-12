@@ -22,7 +22,7 @@ CLEAN_TABLE_COLUMNS = [
 
 
 def create_clean_table(year: int) -> pd.DataFrame:
-    path = directories.raw_data.joinpath("geographical_divisions", f"{year}.csv")
+    path = directories.raw_data / "geographical_divisions" / f"{year}.csv"
     table = pd.read_csv(path, dtype=str)
 
     if "ID" in table.columns:

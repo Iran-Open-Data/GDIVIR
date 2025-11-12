@@ -36,6 +36,7 @@ __all__ = [
     "directories",
 ]
 
+PAKAGE_PATH = Path(__file__).parents[1]
 
 _Dataset = Literal["geographical_divisions", "census_results"]
 _Metadata = Literal["raw_files", "tables", "external_datasets"]
@@ -44,7 +45,7 @@ _ExternalDataset = Literal[
     "hbsir",
 ]
 
-with Path("gdivir", "config", f"settings.yaml").open(encoding="utf-8") as yaml_file:
+with (PAKAGE_PATH / "config/settings.yaml").open(encoding="utf-8") as yaml_file:
     config: dict = yaml.safe_load(yaml_file)
 
 
@@ -61,7 +62,7 @@ def read_metadata_file(file_name: str) -> dict:
     dict
         The content of the metadata file.
     """
-    with Path("gdivir", "metadata", f"{file_name}.yaml").open(encoding="utf-8") as yaml_file:
+    with (PAKAGE_PATH / f"metadata/{file_name}.yaml").open(encoding="utf-8") as yaml_file:
         file_content = yaml.safe_load(yaml_file)
     return file_content
 
@@ -255,9 +256,9 @@ class Directories:
 
     def __init__(self) -> None:
         """Initializes a Directories instance and creates necessary directories."""
-        self.original_data = self.root.joinpath("original")
-        self.raw_data = self.root.joinpath("raw")
-        self.cleaned_data = self.root.joinpath("cleaned")
+        self.original_data = self.root.joinpath("1_original")
+        self.raw_data = self.root.joinpath("2_raw")
+        self.cleaned_data = self.root.joinpath("3_cleaned")
         self.geographical_divisions = self.cleaned_data.joinpath("geographical_divisions.parquet")
         self.census_results = self.cleaned_data.joinpath("census_results.parquet")
 
