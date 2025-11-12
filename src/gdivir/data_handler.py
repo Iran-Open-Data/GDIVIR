@@ -151,6 +151,8 @@ def load_dataset(
     years: _Years = "all",
 ) -> pd.DataFrame:
     dataset_path = directories.cleaned_data / f"{dataset}.parquet"
+    if not dataset_path.exists():
+        setup_data(dataset=dataset)
     parsed_years = _parse_years(years=years, dataset=dataset)
     table = pd.read_parquet(dataset_path, filters=[("Year", "in", parsed_years)])
     return table
