@@ -1,0 +1,38 @@
+[project]
+name = "gdivir"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pandas>=2.3.3",
+    "pyyaml>=6.0.3",
+    "requests>=2.32.5",
+]
+
+[project.urls]
+Homepage = "https://github.com/Iran-Open-Data/GDIVIR"
+Repository = "https://github.com/Iran-Open-Data/GDIVIR"
+
+[tool.uv]
+package = true
+
+[tool.uv.workspace]
+members = [
+  ".",
+]
+
+[tool.uv.sources]
+gdivir = { workspace = true, editable = true }
+
+[dependency-groups]
+dev = [
+  "gdivir",
+  "marimo[recommended]"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+gdivir = ["**/*.yaml", "**/*.csv"]
