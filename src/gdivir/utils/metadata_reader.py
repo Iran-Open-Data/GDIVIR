@@ -253,6 +253,7 @@ class Directories:
     census_results: Path
 
     internal_data = Path(__file__).parents[1].joinpath("internal_data")
+    internal_results = internal_data.joinpath("results")
 
     def __init__(self) -> None:
         """Initializes a Directories instance and creates necessary directories."""

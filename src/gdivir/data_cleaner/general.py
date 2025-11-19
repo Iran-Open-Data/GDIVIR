@@ -78,6 +78,15 @@ def apply_general_cleaning(table: pd.DataFrame) -> None:
     )
 
 
+def normalize_text(s: pd.Series) -> pd.Series:
+    return (
+        s
+        .pipe(_clean_farsi_text)
+        .str.replace(chr(1570), chr(1575))  # آ -> ا
+        .str.replace(r" ", "")
+    )
+
+
 def _clean_farsi_text(s: pd.Series) -> pd.Series:
     """
     Clean Farsi text by replacing Arabic characters, removing invisible and unwanted characters,
