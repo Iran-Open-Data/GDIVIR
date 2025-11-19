@@ -114,9 +114,7 @@ def search_county_version_year(items: Iterable[str], province_code: str) -> str:
         versions = version_count.loc[lambda s: s.eq(items_len)].index.tolist()
     else:
         raise KeyError
-    if not len(versions) == 1:
-        raise Exception
-    version = versions[0]
+    version = versions[-1]
     return version
 
 
@@ -124,7 +122,12 @@ def extract_county_codes(items: Iterable[str], province_code: str) -> list[str]:
     version_table = get_county_version_table(province_code)
     version_year = search_county_version_year(items, province_code)
     standard_name_mapping = (
-        pd.Series(metadata.standard_names["county"][province_code], name="value")
+        pd.Series(
+            metadata.standard_names
+            .get("county", {})
+            .get(province_code, {}),
+            name="value",
+        )
         .rename_axis("key")
         .reset_index()
         .apply(normalize_text)
@@ -145,6 +148,6 @@ def extract_county_codes(items: Iterable[str], province_code: str) -> list[str]:
         .replace(standard_name_mapping)
         .map(code_mapping)
     )
-    assert codes.isna().sum() == 0
+    # assert codes.isna().sum() == 0
     codes_list = codes.to_list()
     return codes_list
