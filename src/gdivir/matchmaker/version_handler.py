@@ -4,7 +4,7 @@ import pandas as pd
 
 from ..data_handler import load_dataset
 from ..data_cleaner import normalize_text
-from ..utils.metadata_reader import directories
+from ..utils.metadata_reader import directories, metadata
 
 
 def create_province_version_table() -> None:
@@ -123,6 +123,14 @@ def search_county_version_year(items: Iterable[str], province_code: str) -> str:
 def extract_county_codes(items: Iterable[str], province_code: str) -> list[str]:
     version_table = get_county_version_table(province_code)
     version_year = search_county_version_year(items, province_code)
+    standard_name_mapping = (
+        pd.Series(metadata.standard_names["county"][province_code], name="value")
+        .rename_axis("key")
+        .reset_index()
+        .apply(normalize_text)
+        .set_index("key")["value"]
+        .to_dict()
+    )
     code_mapping = (
         version_table[version_year]
         .pipe(normalize_text)
@@ -134,6 +142,7 @@ def extract_county_codes(items: Iterable[str], province_code: str) -> list[str]:
     codes = (
         pd.Series(list(items), dtype=str)
         .pipe(normalize_text)
+        .replace(standard_name_mapping)
         .map(code_mapping)
     )
     assert codes.isna().sum() == 0

@@ -28,11 +28,12 @@ import pandas as pd
 
 
 INVISIBLE_CHARS = [
-    chr(8203),
     chr(173),
     chr(8207),
-    chr(8236),
+    chr(8203),
     chr(8234),
+    chr(8235),
+    chr(8236),
     chr(65279)
 ]
 

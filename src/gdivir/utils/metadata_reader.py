@@ -210,6 +210,7 @@ class Metadata:
     raw_files: dict = read_metadata_file("raw_files")
     tables: dict = read_metadata_file("tables")
     external_datasets: dict = read_metadata_file("external_datasets")
+    standard_names: dict = read_metadata_file("standard_names")
 
     def __init__(self) -> None:
         """Initializes a Metadata instance."""
